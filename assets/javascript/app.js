@@ -55,9 +55,10 @@ $(document).ready(function() {
 
 $("#start").on('click', function() {
   startGame();
+  timerRunning();
 });
 
-$(document).on('click' , '.options', function() {
+$(".options").on('click', function() {
     guessChecker();
 });
 
@@ -87,6 +88,48 @@ function startGame() {
   $('#remaining-time').show();
 
   // ask first question
+  nextQuestion();
+}
+
+function guessChecker() {
+  // timer ID for gameResult setTimeout
+  var resultId;
+
+  // the answer to the current question being asked
+  var currentAnswer = Object.values(charDee.answers)[currentQuestion];
+
+  // if the text of the option picked matches the answer of the current question, increment correct
+  if($(this).text() === currentAnswer) {
+    // turn button green for correct
+    $(this).addClass('btn-success').removeClass('btn-info');
+
+    correctNum++;
+
+    clearInterval(timerId);
+    resultId = setTimeout(guessResult, 1000);
+    $('#results').html('<h3>Correct Answer!</h3>');
+
+  } else {
+    // turn button clicked red for incorrect
+    $(this).addClass('btn-danger').removeClass('btn-info');
+
+    incorrectNum++;
+    clearInterval(timerId);
+    resultId = setTimeout(guessResult, 1000);
+    $('#results').html('<h3>Better luck next time! '+ currentAnswer +'</h3>');
+  }
+}
+
+function guessResult() {
+
+  // increment to next question set
+  currentQuestion++;
+
+  // remove the options and results
+  $('.options').remove();
+  $('#results h3').remove();
+
+  // begin next question
   nextQuestion();
 }
 
@@ -153,46 +196,4 @@ function timerRunning() {
     // show start button to begin a new game
     $('#start').show();
   }
-}
-
-function guessChecker() {
-  // timer ID for gameResult setTimeout
-  var resultId;
-
-  // the answer to the current question being asked
-  var currentAnswer = Object.values(charDee.answers)[currentQuestion];
-
-  // if the text of the option picked matches the answer of the current question, increment correct
-  if($(this).text() === currentAnswer) {
-    // turn button green for correct
-    $(this).addClass('btn-success').removeClass('btn-info');
-
-    correctNum++;
-
-    clearInterval(timerId);
-    resultId = setTimeout(guessResult, 1000);
-    $('#results').html('<h3>Correct Answer!</h3>');
-
-  } else {
-    // turn button clicked red for incorrect
-    $(this).addClass('btn-danger').removeClass('btn-info');
-
-    incorrectNum++;
-    clearInterval(timerId);
-    resultId = setTimeout(guessResult, 1000);
-    $('#results').html('<h3>Better luck next time! '+ currentAnswer +'</h3>');
-  }
-}
-
-function guessResult() {
-
-  // increment to next question set
-  currentQuestion++;
-
-  // remove the options and results
-  $('.options').remove();
-  $('#results h3').remove();
-
-  // begin next question
-  nextQuestion();
 }
