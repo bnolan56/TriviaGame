@@ -1,0 +1,32 @@
+body {
+  max-width: 100%;
+  background: url('../../assets/images/its-always-sunny-bg.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+header{
+  margin-top: .5rem;
+}
+
+jumbotron{
+  background-color: #ccc;
+  opacity: 0.6;
+}
+
+/* Typography */
+
+h1 {
+  color: #FFF;
+}
+
+h1,h2 {
+  font-family: 'Signika', sans-serif;
+  font-style: italic;
+}
+
+p {
+  font-family: 'Signika', sans-serif;
+}
