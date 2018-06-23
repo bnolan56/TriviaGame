@@ -49,46 +49,46 @@ var charDee = {
 };
 
 // game function on document ready
-// $(document).ready(function() {
-
-// game function on document ready
 $(document).ready(function() {
   $("#remaining-time").hide();
-  // $(document).on('click' , '.options', guessChecker());
 })
 
 $("#start").on('click', function() {
-//   $(document).on('click' , '.options', guessChecker());
-// })
-
-  function startGame() {
-
-    // restarts game tallies
-    currentQuestion = 0;
-    correctNum = 0;
-    incorrectNum = 0;
-    notAnswered = 0;
-
-    clearInterval(timerId);
-
-    // show game section
-    $('#game').show();
-
-    //  empty last results
-    $('#results').html('');
-
-    // show timer
-    $('#timerCount').html(timerCount);
-
-    // remove start button
-    $('#start').hide();
-
-    $('#remaining-time').show();
-
-    // ask first question
-    nextQuestion();
-  }
+  startGame();
 });
+
+$(document).on('click' , '.options', function() {
+    guessChecker();
+});
+
+// FUNCTIONS
+function startGame() {
+
+  // restarts game tallies
+  currentQuestion = 0;
+  correctNum = 0;
+  incorrectNum = 0;
+  notAnswered = 0;
+
+  clearInterval(timerId);
+
+  // show game section
+  $('#game').show();
+
+  //  empty last results
+  $('#results').html('');
+
+  // show timer
+  $('#timerCount').html(timerCount);
+
+  // remove start button
+  $('#start').hide();
+
+  $('#remaining-time').show();
+
+  // ask first question
+  nextQuestion();
+}
 
 function nextQuestion() {
 
