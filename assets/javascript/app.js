@@ -1,11 +1,3 @@
-// $(document).ready(function(){
-//
-//   // $("#remaining-time").hide();
- // $("#start").on('click', charDee.startGame);
- // $(document).on('click' , '.option', trivia.guessChecker);
-//
-// }
-
 var correctNum = 0;
 var incorrectNum = 0;
 var notAnswered = 0;
@@ -204,27 +196,3 @@ function guessResult() {
   // begin next question
   nextQuestion();
 }
-
-
-
-
-
-
-
-
-
-// var questions = ["What is Rickety Cricket's real name?", 'What is the best food to make you go to sleep?',
-// 'Is Dee a bitch?', "How famous is Mac's famous Mac & Cheese?", "Do you have to pay the troll to get into this boy's hole?",
-// 'What is the D.E.N.N.I.S System?', "What is Nightcrawlers?", "Should you hunt a human?"];
-//
-// var answers = [["Former Father Matthew Mara", "Psycho Pete", "Lion McPoyle", "Reggie"],
-// ["Beer","Coon Meat","Cat Food","Wine in a Can"],
-// ["Dee's a Bitch", "She's Fatty McGoo", "She's a bird", "She's the aluminum monster"],
-// ["If it's so famous, why haven't I heard of it?", "Mildly Famous", "Gross, it's made with dog meat", "It's just Kraft Mac & Cheese"],
-// ["Hong Kong", "Macau", "Shanghai", "Beijing"],
-// ["Ankara","Istanbul","Antalya","Bursa"],
-// ["Medellin", "Bogota", "Cartagena", "Cali"],
-// ["Mumbai","Hyderabad","Bangalore","New Delhi"]];
-//
-// var correctAnswers = ["Former Father Matthew Mara", "Dee's a Bitch", "If it's so famous, why haven't I heard of it?",
-// "C. Tokyo", "D. Beijing", "A. Ankara", "B. Bogota", "D. New Delhi"];
