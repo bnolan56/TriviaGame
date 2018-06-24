@@ -89,6 +89,17 @@ $(document).ready(function() {
     callTimer();
   }
 
+  function showPossibleAnswers(questionIndex) {
+    for (var i = 0; i < charDee[questionIndex].length; i++) {
+      var button = $("<button>");
+      button.addClass("btn");
+      button.addClass("btn-default");
+      button.attr("data-index", i);
+      button.text(charDee[questionIndex].possibleAnswers);
+      $("#options").append(button);
+    }
+  }
+
   // function that shows my timer
   function showTimerDiv() {
     $('#time-remaining').show();
@@ -140,7 +151,8 @@ $(document).ready(function() {
 
   $("#start").on('click', function() {
     showTimerDiv();
-    showQuestion();
+    showQuestion(questionIndex);
+    showPossibleAnswers();
   });
 
 //     // FUNCTIONS
