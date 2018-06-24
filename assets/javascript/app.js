@@ -4,11 +4,15 @@ $(document).ready(function() {
 
   $("#time-remaining").hide();
 
-  var incorrectNum = 0;
+//// VARAIBLES & OBJECTS ////
+
+  // global variables
+  var questionIndex = 0;
+  var incorrectAns = 0;
   var notAnswered = 0;
   var currentQuestion = 0;
 
-  // question object & array
+  // question array
   var charDee = [{
     question: "What is Rickety Cricket's real name?",
     possibleAnswers: ["Former Father Matthew Mara", "Psycho Pete", "Lion McPoyle", "Reggie"],
@@ -62,7 +66,7 @@ $(document).ready(function() {
   },
   {
     question: "What level did Duncan get to in his game?",
-    possibleAnswers: 'LEVEL TWOO', 'Z and Duncan were DJing', 'LEVEL 3 SON! LEVEL 3!', 'SHABOOYA!'],
+    possibleAnswers: ['LEVEL TWOO', 'Z and Duncan were DJing', 'LEVEL 3 SON! LEVEL 3!', 'SHABOOYA!'],
     correct: 2,
     correctScreen: "Oh shit son! Level 3!",
     incorrectScreen: "SHABOOYA! YOU'RE WRONG! The answer was LEVEL 3 SON! LEVEL 3!",
@@ -73,17 +77,51 @@ $(document).ready(function() {
     correct: 3,
     correctScreen: "Yeah Frank? I know that bitch.",
     incorrectScreen: "SHABOOYA! YOU'RE WRONG! The answer was BECAUSE DENNIS IS A BASTARD MAN",
-  }
+  },
 ];
 
+//// FUNCTIONS ////
 
-// function that shows my timer
+  // function that shows my timer
   function showTimer() {
     $('#time-remaining').show();
   }
 
+  function runTimer() {
+    var timerCount = 20;
+    var timerInterval = setInterval( function() {
+      timeCount--;
+      $("#timeCounter").html(timerCount);
+
+      if(timerCount === 0) {
+        incorrectAns++;
+
+        clearInterval(timerInterval);
+        timerCount = 20;
+
+        $("#timeCounter").html(timerCount);
+
+        setTimeout( function() {
+          console.log(questionIndex, charDee.length);
+
+          if(questionIndex + 1 < charDee.length) {
+            questionIndex++;
+
+          }
+
+          if (questionIndex + 1 === charDee.length) {
+            winCheck();
+          }
+        }, 5000);
+      }
+    })
+  }
+
+//// EVENT LISTENERS ////
+
   $("#start").on('click', function() {
     showTimer();
+    runTimer();
   });
 
 //     // FUNCTIONS
