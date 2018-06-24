@@ -91,7 +91,7 @@ $(document).ready(function() {
     var timerCount = 20;
     var timerInterval = setInterval( function() {
       timerCount--;
-      $("#timeCounter").html(timerCount);
+      $("#timeCounter").text(timerCount);
 
       if(timerCount === 0) {
         incorrectAns++;
