@@ -133,7 +133,7 @@ $(document).ready(function() {
       });
 
       $("#question").hide();
-      $('#results').html("<h3 class='win'>YOU WIN WITH AN AMAZING " + totalScore + "</h3>" + "<br /> <img src='assets/images/success.gif' alt='you won image' />");
+      $('#results').html("<h3 class='win'>YOU WIN WITH AN AMAZING " + totalScore + "</h3>" + "<br /> <img class='rounded' src='assets/images/success.gif' alt='you won image' />");
       $('#choices').append("<button class='btn btn-md btn-warning resetbutton'>Reset Game</button>")
       $('.resetbutton').on("click", function () {
         location.reload();
@@ -146,7 +146,7 @@ $(document).ready(function() {
       });
 
       $("#question").hide();
-      $('#results').html("<h3 class='loss'>SHABUYA YOU LOSE WITH A TERRIBLE " + totalScore + "</h3>" + "<br /> <img src='assets/images/shabuya-you-lose.gif' alt='dance about losing' />");
+      $('#results').html("<h3 class='loss'>SHABUYA YOU LOSE WITH A TERRIBLE " + totalScore + "</h3>" + "<br /> <img class='rounded' src='assets/images/shabuya-you-lose.gif' alt='dance about losing' />");
       $('#choices').append("<button class='btn btn-md btn-warning resetbutton'>Reset Game</button>")
       $('.resetbutton').on("click", function () {
         location.reload();
@@ -223,6 +223,7 @@ $(document).ready(function() {
   // start game on click event that runs first functions
   $("#start").on('click', function() {
     $("#start").hide();
+    $("#game-of-games").hide();
     showTimerDiv();
     showQuestion(questionIndex);
     showPossibleAnswers(questionIndex);

@@ -45,6 +45,11 @@ p {
   text-align: center;
 }
 
+#game-of-games {
+  max-width: 50%;
+  margin-left: 24%;
+}
+
 .win {
   font-family: 'Signika', sans-serif;
   color: #28a745;
@@ -61,7 +66,6 @@ p {
   background-color: #2d2d2d;
   color: #fff;
   margin: 1rem;
-  /* display: inline-block; */
   text-align: center;
 }
 
@@ -83,4 +87,13 @@ fas {
 
 .scoreboard {
   margin-bottom: 1rem;
+}
+
+
+@media screen and (max-width: 480px) {
+
+  img {
+    max-width: 75%;
+  }
+
 }
