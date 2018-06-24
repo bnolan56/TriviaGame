@@ -18,65 +18,63 @@ $(document).ready(function() {
     possibleAnswers: ["Former Father Matthew Mara", "Psycho Pete", "Lion McPoyle", "Reggie"],
     correct: 0,
     correctChoice: "Rickety Rick rick Crickettt. Matty Mara was his name",
-    incorrectChoice: "SHABOOYA! YOU'RE WRONG! The answer was Former Father Matthew Mara",
+    incorrectChoice: "YOU'RE WRONG! The answer was Former Father Matthew Mara",
   },
   {
     question: 'What is the best food to make you go to sleep?',
     possibleAnswers: ["Beer", "Coon Meat", "Cat Food", "Wine in a Can"],
     correct: 2,
     correctChoice: "Yup you eat cat food and huff some glue, your stomach gurgles and it drowns the cat cries at night out.",
-    incorrectChoice: "SHABOOYA! YOU'RE WRONG! The answer was Cat Food",
+    incorrectChoice: "YOU'RE WRONG! The answer was Cat Food",
   },
   {
     question: 'Who has Charlie and Frank been hanging with, under a bridge?',
     possibleAnswers: ["Z", "Bruce Mathis", "Old Black Man", "Duncan"],
     correct: 3,
     correctChoice: "Yeah Frank? I know that bitch.",
-    incorrectChoice: "SHABOOYA! YOU'RE WRONG! The answer was Duncan, Frank's bridge friend",
+    incorrectChoice: "YOU'RE WRONG! The answer was Duncan, Frank's bridge friend",
   },
   {
     question: "How famous is Mac's famous Mac & Cheese?",
     possibleAnswers: ["If it's so famous, why haven't I heard of it?", "Mildly Famous", "Gross, it's made with dog meat", "It's just Kraft Mac & Cheese"],
     correct: 0,
     correctChoice: "Mac's famous mac and cheese? I'm your best friend, and, I've never heard of it",
-    incorrectChoice: "SHABOOYA! YOU'RE WRONG! The answer was if it's so famous, why haven't I heard of it",
+    incorrectChoice: "YOU'RE WRONG! The answer was if it's so famous, why haven't I heard of it",
   },
   {
     question: "Who is the Nightman's archenemy?",
     possibleAnswers: ['The Lawyer', 'Uncle Jack', 'Dayman: Champion of the Sun', 'Carol'],
     correct: 2,
     correctChoice: "Dayman! AHHH AHHHHHH Champion of the Sun",
-    incorrectChoice: "SHABOOYA! YOU'RE WRONG! The answer was Dayman Champion of the Sun",
+    incorrectChoice: "YOU'RE WRONG! The answer was Dayman Champion of the Sun",
   },
   {
-    question: 'What is the D.E.N.N.I.S System?',
-    possibleAnswers: ['Demonstrate value, Engage physically, Nurture dependence, Neglect emotionally, Inspire hope, Separate entirely',
-    'Demonstrate looks, Encompass sexually, Neglect physically , Nuture hope, Inspire dependence, Smoothly exit','Dennis is a Name',
-    'Degrade looks, Engage emotionally, Nurture dependence, Nevermind opinions, Intimidate personally, Show worth'],
-    correct: 0,
-    correctChoice: "DENNIS SYSTEM, the true method to winning a girl's heart",
-    incorrectChoice: "SHABOOYA! YOU'RE WRONG! Demonstrate value, Engage physically, Nurture dependence, Neglect emotionally, Inspire hope, Separate entirely",
+    question: "Who's house was Dennis in?",
+    possibleAnswers: ["Craig Thomas's House", 'Mental Facility', "Sinbad's House", "Charlie's Mom's House"],
+    correct: 2,
+    correctChoice: "THAT'S RIGHT YOU IN SINBAD'S HOUSE",
+    incorrectChoice: "YOU'RE WRONG! YOU IN SINBAD'S HOUSE. WHEN YOU IN SINBAD'S HOUSE YOU SINBAD'S BITCH",
   },
   {
     question: "What is Nightcrawlers?",
     possibleAnswers: ['A worm for fishing', 'A game where the lights are turned off and you wiggle on the floor like a worm', 'You link arms and pretend to be a worm on a hook', 'A stupid catch phrase'],
     correct: 1,
     correctChoice: "Nightcrawlers! I love that game, we can play if you want",
-    incorrectChoice: "SHABOOYA! YOU'RE WRONG! The answer was a game where you turn the lights off and wiggle on the floor like a worm",
+    incorrectChoice: "YOU'RE WRONG! The answer was a game where you turn the lights off and wiggle on the floor like a worm",
   },
   {
     question: "What level did Duncan get to in his game?",
-    possibleAnswers: ['LEVEL TWOO', 'Z and Duncan were DJing', 'LEVEL 3 SON! LEVEL 3!', 'SHABOOYA!'],
+    possibleAnswers: ['LEVEL TWOO', 'Z and Duncan were DJing', 'LEVEL 3 SON! LEVEL 3!', 'Matchbox 20!'],
     correct: 2,
     correctChoice: "Oh shit son! Level 3!",
-    incorrectChoice: "SHABOOYA! YOU'RE WRONG! The answer was LEVEL 3 SON! LEVEL 3!",
+    incorrectChoice: "YOU'RE WRONG! The answer was LEVEL 3 SON! LEVEL 3!",
   },
   {
     question: "Dennis is Asshole, Why Charlie Hate?",
     possibleAnswers: ['DENNIS IS ASSHOLE', 'The Nightman Cometh', "Dennis doesn't know shit about girls", 'BECAUSE DENNIS IS A BASTARD MAN'],
     correct: 3,
     correctChoice: "Yup, that was totally me who wronte that. Dennis is a bastard man",
-    incorrectChoice: "SHABOOYA! YOU'RE WRONG! The answer was BECAUSE DENNIS IS A BASTARD MAN",
+    incorrectChoice: "YOU'RE WRONG! The answer was BECAUSE DENNIS IS A BASTARD MAN",
   },
 ];
 
@@ -86,9 +84,9 @@ $(document).ready(function() {
   //unhides scoreboard initially, but also used as sort of a "refresh" function.
   function showScoreboard() {
     $('.scoreboard').removeClass("hidden");
-    $('#correct-answers').html("Correct answers: " + correctAnswers);
-    $('#incorrect-answers').html("Incorrect answers: " + incorrectAnswers);
-    $('#not-answered').html("Not answered: " + notAnswered);
+    $('#correct-answers').text("Correct answers: " + correctAnswers);
+    $('#incorrect-answers').text("Incorrect answers: " + incorrectAnswers);
+    $('#not-answered').text("Not answered: " + notAnswered);
   }
 
   // function that displays current question to be answered
@@ -134,7 +132,8 @@ $(document).ready(function() {
         "Total Score": totalScore
       });
 
-      $('#results').html("<h3 class='win'>YOU WIN WITH AN AMAZING " + totalScore + "</h3>");
+      $("#question").hide();
+      $('#results').html("<h3 class='win'>YOU WIN WITH AN AMAZING " + totalScore + "</h3>" + "<br /> <img src='assets/images/success.gif' alt='you won image' />");
       $('#choices').append("<button class='btn btn-md btn-warning resetbutton'>Reset Game</button>")
       $('.resetbutton').on("click", function () {
         location.reload();
@@ -146,7 +145,8 @@ $(document).ready(function() {
         "Total Score": totalScore
       });
 
-      $('#results').html("<h3 class='loss'>YOU LOSE WITH A TERRIBLE " + totalScore + "</h1>");
+      $("#question").hide();
+      $('#results').html("<h3 class='loss'>SHABUYA YOU LOSE WITH A TERRIBLE " + totalScore + "</h3>" + "<br /> <img src='assets/images/shabuya-you-lose.gif' alt='dance about losing' />");
       $('#choices').append("<button class='btn btn-md btn-warning resetbutton'>Reset Game</button>")
       $('.resetbutton').on("click", function () {
         location.reload();
@@ -203,6 +203,7 @@ $(document).ready(function() {
 
           if (questionIndex + 1 === charDee.length) {
             winCheck();
+            showScoreboard();
           }
         }, 5000);
       }

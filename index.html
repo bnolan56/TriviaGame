@@ -26,22 +26,25 @@
         <div id="game">
           <h2 class="card-header display-6">Click to play, you will always lose...</h2>
           <p id="time-remaining" class="lead">Time remaining: <span id="timeCounter"></span></p>
+
+          <div class="hidden scoreboard lead">
+            <span id="correct-answers"></span>
+            <span id="incorrect-answers"></span>
+            <span id="not-answered"></span>
+          </div>
+
           <p id="question"></p>
         </div>
 
-        <div id="results" class="hidden scoreboard">
-          <div id="correct-answers"></div>
-          <div id="incorrect-answers"></div>
-          <div id="not-answered"></div>
-        </div>
+        <div id="results"></div>
 
         <br />
-        
+
         <div class="row">
           <div class="col-lg-12">
             <div id="choices" class="text-center">
               <button id="start" class="btn btn-primary btn-md">Start Game</button>
-              <div id="options"></div>
+              <div id="options" class="justify-content-center"></div>
             </div>
           </div>
         </div>
