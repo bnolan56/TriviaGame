@@ -18,7 +18,7 @@ card{
 /* Typography */
 
 h1 {
-  color: #FFF;
+  color: #000;
 }
 
 h1,h2 {
@@ -29,7 +29,6 @@ h1,h2 {
 p {
   font-family: 'Signika', sans-serif;
 }
-
 
 /* Classes & IDs */
 

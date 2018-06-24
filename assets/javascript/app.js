@@ -183,8 +183,10 @@ $(document).ready(function() {
       $("#timeCounter").text(timerCount);
 
       if(timerCount === 0) {
-        incorrectAnswers++;
-
+        notAnswered++;
+        showScoreboard();
+        textShownAfterTimeOut();
+        buttonClear();
         clearInterval(timerInterval);
         timerCount = 15;
 
@@ -192,10 +194,11 @@ $(document).ready(function() {
 
         setTimeout( function() {
           console.log(questionIndex, charDee.length);
-
+          showScoreboard();
           if(questionIndex + 1 < charDee.length) {
             questionIndex++;
-
+            showQuestion(questionIndex);
+            showPossibleAnswers(questionIndex);
           }
 
           if (questionIndex + 1 === charDee.length) {
@@ -203,7 +206,15 @@ $(document).ready(function() {
           }
         }, 5000);
       }
-    }, 1000)
+    }, 1000);
+
+    // on click event to reload timer to prevent multiple timers
+    $(document).on("click", ".btn-choice", function () {
+     clearInterval(timerInterval);
+     timerCount = 15;
+     $('#timecounter').text(timerCount);
+     showScoreboard();
+   });
   }
 
 //// EVENT LISTENERS ////
@@ -215,7 +226,6 @@ $(document).ready(function() {
     showQuestion(questionIndex);
     showPossibleAnswers(questionIndex);
     showScoreboard();
-
   });
 
   //button on click functions.
@@ -230,20 +240,19 @@ $(document).ready(function() {
       correctChoiceShown();
       buttonClear();
       correctAnswers++;
-      // $('#results').html('');
       showScoreboard();
 
       if (questionIndex + 1 === charDee.length) {
         winCheck();
-        showScoreboard()
       }
 
       if (questionIndex + 1 < charDee.length) {
         setTimeout(function () {
           buttonClear();
+          showScoreboard();
           showQuestion(questionIndex);
           showPossibleAnswers(questionIndex);
-        }, 2000);
+        }, 3000);
       }
     }
 
@@ -251,19 +260,19 @@ $(document).ready(function() {
       incorrectChoiceShown();
       buttonClear();
       incorrectAnswers++;
-      // $('#results').html('');
+      showScoreboard();
 
       if (questionIndex + 1 === charDee.length) {
         winCheck();
-        showScoreboard();
       }
 
       if (questionIndex + 1 < charDee.length) {
         setTimeout(function () {
           buttonClear();
+          showScoreboard();
           showQuestion(questionIndex);
           showPossibleAnswers(questionIndex);
-        }, 2000);
+        }, 3000);
       }
     }
 
