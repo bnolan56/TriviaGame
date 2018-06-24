@@ -23,6 +23,7 @@ $(document).ready(function() {
     correctScreen: "Yup you eat cat food and huff some glue, your stomach gurgles and it drowns the cat cries at night out.",
     incorrectScreen: "SHABOOYA! YOU'RE WRONG! The answer was Cat Food",
   },
+  {
     question: 'Who has Charlie and Frank been hanging with, under a bridge?',
     possibleAnswers: ["Z", "Bruce Mathis", "Old Black Man", "Duncan"],
     correct: 3,
@@ -36,6 +37,7 @@ $(document).ready(function() {
     correctScreen: "Mac's famous mac and cheese? I'm your best friend, and, I've never heard of it",
     incorrectScreen: "SHABOOYA! YOU'RE WRONG! The answer was if it's so famous, why haven't I heard of it",
   },
+  {
     question: "Who is the Nightman's archenemy?",
     possibleAnswers: ['The Lawyer', 'Uncle Jack', 'Dayman: Champion of the Sun', 'Carol'],
     correct: 2,
@@ -51,6 +53,7 @@ $(document).ready(function() {
     correctScreen: "DENNIS SYSTEM, the true method to winning a girl's heart",
     incorrectScreen: "SHABOOYA! YOU'RE WRONG! Demonstrate value, Engage physically, Nurture dependence, Neglect emotionally, Inspire hope, Separate entirely",
   },
+  {
     question: "What is Nightcrawlers?",
     possibleAnswers: ['A worm for fishing', 'A game where the lights are turned off and you wiggle on the floor like a worm', 'You link arms and pretend to be a worm on a hook', 'A stupid catch phrase'],
     correct: 1,
@@ -64,6 +67,7 @@ $(document).ready(function() {
     correctScreen: "Oh shit son! Level 3!",
     incorrectScreen: "SHABOOYA! YOU'RE WRONG! The answer was LEVEL 3 SON! LEVEL 3!",
   },
+  {
     question: "Dennis is Asshole, Why Charlie Hate?",
     possibleAnswers: ['DENNIS IS ASSHOLE', 'The Nightman Cometh', "Dennis doesn't know shit about girls", 'BECAUSE DENNIS IS A BASTARD MAN'],
     correct: 3,
@@ -75,7 +79,7 @@ $(document).ready(function() {
 
 // function that shows my timer
   function showTimer() {
-    $('#remaining-time').show();
+    $('#time-remaining').show();
   }
 
   $("#start").on('click', function() {
@@ -106,7 +110,6 @@ $(document).ready(function() {
 //       // remove start button
 //       $('#start').hide();
 //
-      $('#remaining-time').show();
 //
 //       // ask first question
 //       nextQuestion();
