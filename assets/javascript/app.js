@@ -90,7 +90,7 @@ $(document).ready(function() {
   function runTimer() {
     var timerCount = 20;
     var timerInterval = setInterval( function() {
-      timeCount--;
+      timerCount--;
       $("#timeCounter").html(timerCount);
 
       if(timerCount === 0) {
@@ -99,7 +99,7 @@ $(document).ready(function() {
         clearInterval(timerInterval);
         timerCount = 20;
 
-        $("#timeCounter").html(timerCount);
+        $("#timeCounter").text(timerCount);
 
         setTimeout( function() {
           console.log(questionIndex, charDee.length);
