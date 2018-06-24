@@ -29,3 +29,10 @@ h1,h2 {
 p {
   font-family: 'Signika', sans-serif;
 }
+
+
+/* Classes & IDs */
+
+.btn-choice {
+  margin-right: 1rem;
+}
