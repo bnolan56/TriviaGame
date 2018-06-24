@@ -2,16 +2,13 @@
 $(document).ready(function() {
   console.log("this is a console log");
 
-//   $("#time-remaining").hide();
+  $("#time-remaining").hide();
 
   var incorrectNum = 0;
   var notAnswered = 0;
   var currentQuestion = 0;
-  var timerCount = 30;
-  var timerOn = false;
-  var timerId = '';
 
-  // question object
+  // question object & array
   var charDee = [{
     question: "What is Rickety Cricket's real name?",
     possibleAnswers: ["Former Father Matthew Mara", "Psycho Pete", "Lion McPoyle", "Reggie"],
@@ -74,10 +71,17 @@ $(document).ready(function() {
     incorrectScreen: "SHABOOYA! YOU'RE WRONG! The answer was BECAUSE DENNIS IS A BASTARD MAN",
   }
 ];
-//
-//   // Event Listeners
-//   $("#start").on('click', function() {
-//
+
+
+// function that shows my timer
+  function showTimer() {
+    $('#remaining-time').show();
+  }
+
+  $("#start").on('click', function() {
+    showTimer();
+  });
+
 //     // FUNCTIONS
 //     function startGame() {
 //
@@ -102,7 +106,7 @@ $(document).ready(function() {
 //       // remove start button
 //       $('#start').hide();
 //
-//       $('#remaining-time').show();
+      $('#remaining-time').show();
 //
 //       // ask first question
 //       nextQuestion();
