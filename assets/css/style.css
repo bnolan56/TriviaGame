@@ -11,10 +11,8 @@ header{
   margin-top: .5rem;
 }
 
-jumbotron{
+card{
   background-color: #ccc;
-  opacity: 0.9;
-  max-width: 50%;
 }
 
 /* Typography */
@@ -35,12 +33,22 @@ p {
 
 /* Classes & IDs */
 
+#question {
+  font-family: 'Signika', sans-serif;
+  font-size: 24px;
+}
+
+#choices {
+  margin-bottom: 2rem;
+}
 .win {
+  font-family: 'Signika', sans-serif;
   color: #28a745;
   font-weight: bold;
 }
 
 .loss {
+  font-family: 'Signika', sans-serif;
   color: #dc3545;
   font-weight: bold;
 }
@@ -49,7 +57,7 @@ p {
   background-color: #2d2d2d;
   color: #fff;
   margin-right: 1rem;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 fas {

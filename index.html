@@ -22,10 +22,10 @@
         <h1>CharDee MacDennis: Trivia: The Game of Games</h1>
       </header>
 
-      <div class="jumbotron jumbotron-fluid rounded">
+      <div class="card rounded">
         <div id="game">
-          <h2>Click to play, you will always lose</h2>
-          <p id="time-remaining">Time remaining: <span id="timeCounter"></span></p>
+          <h2 class="card-header display-6">Click to play, you will always lose...</h2>
+          <p id="time-remaining" class="lead">Time remaining: <span id="timeCounter"></span></p>
           <p id="question"></p>
         </div>
 
@@ -47,8 +47,12 @@
 
     </div>
 
+    <br />
+    
     <!-- audio tag -->
-    <audio></audio>
+    <audio controls loop>
+      <source src="assets/music/coconut-shy.mp3" type="audio/mp3"/>
+    </audio>
 
     <!-- App / Bootstrpa JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

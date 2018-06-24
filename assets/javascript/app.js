@@ -121,6 +121,10 @@ $(document).ready(function() {
     $('#results').html("<i class='fas fa-times-circle incorrect-choice-shown'></i> <br /> <p class='incorrect-choice-shown'>" + charDee[questionIndex].incorrectChoice + "</p>");
   }
 
+  function textShownAfterTimeOut() {
+    $('#results').html("<i class='fas fa-times-circle incorrect-choice-shown'></i> <br /> <p class='incorrect-choice-shown'>Out of Time!! You're stupid</p>" + charDee[questionIndex].correctChoice);
+  }
+
   function winCheck() {
     var scoreCalc = Math.floor(correctAnswers / (correctAnswers + incorrectAnswers) * 100)
     var totalScore = scoreCalc + "%";
@@ -210,6 +214,7 @@ $(document).ready(function() {
     showTimerDiv();
     showQuestion(questionIndex);
     showPossibleAnswers(questionIndex);
+    showScoreboard();
 
   });
 
@@ -224,8 +229,9 @@ $(document).ready(function() {
       $("<button>").addClass("btn-success");
       correctChoiceShown();
       buttonClear();
-      correctAnswers++
+      correctAnswers++;
       // $('#results').html('');
+      showScoreboard();
 
       if (questionIndex + 1 === charDee.length) {
         winCheck();
@@ -244,12 +250,12 @@ $(document).ready(function() {
     if (charDee[questionIndex].correct !== answerIndex) {
       incorrectChoiceShown();
       buttonClear();
-      incorrectAnswers++
+      incorrectAnswers++;
       // $('#results').html('');
 
       if (questionIndex + 1 === charDee.length) {
         winCheck();
-        showScoreboard()
+        showScoreboard();
       }
 
       if (questionIndex + 1 < charDee.length) {
