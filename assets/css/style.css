@@ -13,6 +13,8 @@ header{
 
 jumbotron{
   background-color: #ccc;
+  opacity: 0.9;
+  max-width: 50%;
 }
 
 /* Typography */
@@ -33,6 +35,35 @@ p {
 
 /* Classes & IDs */
 
+.win {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.loss {
+  color: #dc3545;
+  font-weight: bold;
+}
+
 .btn-choice {
+  background-color: #2d2d2d;
+  color: #fff;
   margin-right: 1rem;
+  font-size: 10px;
+}
+
+fas {
+  font-size: 24px;
+}
+
+.correct-choice-shown {
+  color: #28a745;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.incorrect-choice-shown {
+  color: #dc3545;
+  font-size: 18px;
+  font-weight: 400;
 }
