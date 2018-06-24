@@ -82,13 +82,32 @@ $(document).ready(function() {
 
 //// FUNCTIONS ////
 
+  //function that displays current question to be answered
+  function showQuestion(questionIndex) {
+    $("#question").removeClass("hidden");
+    $("#question").text(charDee[questionIndex].question);
+    callTimer();
+  }
+
   // function that shows my timer
-  function showTimer() {
+  function showTimerDiv() {
     $('#time-remaining').show();
   }
 
+  // my controller function that runs timers and compares to array of questions
+  function callTimer() {
+    if (questionIndex <= charDee.length) {
+      runTimer();
+    }
+
+    if (questionIndex === charDee.length){
+      console.log("end of questions");
+    }
+  }
+
+  // function that runs my timer, interval delay of 1 second
   function runTimer() {
-    var timerCount = 20;
+    var timerCount = 21;
     var timerInterval = setInterval( function() {
       timerCount--;
       $("#timeCounter").text(timerCount);
@@ -97,7 +116,7 @@ $(document).ready(function() {
         incorrectAns++;
 
         clearInterval(timerInterval);
-        timerCount = 20;
+        timerCount = 21;
 
         $("#timeCounter").text(timerCount);
 
@@ -120,8 +139,8 @@ $(document).ready(function() {
 //// EVENT LISTENERS ////
 
   $("#start").on('click', function() {
-    showTimer();
-    runTimer();
+    showTimerDiv();
+    showQuestion();
   });
 
 //     // FUNCTIONS
