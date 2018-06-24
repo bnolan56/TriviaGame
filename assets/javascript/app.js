@@ -114,7 +114,7 @@ $(document).ready(function() {
           }
         }, 5000);
       }
-    })
+    }, 1000)
   }
 
 //// EVENT LISTENERS ////
